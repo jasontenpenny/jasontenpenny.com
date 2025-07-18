@@ -9,14 +9,14 @@
     --text-link: rgb(77, 126, 232);
     --text-strong: rgb(255, 255, 255);
     --text-quote: rgb(187, 236, 173);
-    --text-prompt: rgb(216, 212, 212, 0.75);
+    --text-prompt: rgba(216, 212, 212, 0.75);
     --border-radius-large: 0.625rem;
     --border-radius-small: 0.3125rem;
     --code-border-radius: 0.5rem;
     --background-primary: rgb(20, 20, 20);
     --background-hover: rgb(50, 50, 50);
     font-family: Inter, sans-serif;
-    --icon-font: "Font Awesome 6 Free";
+    --icon-font: "Font Awesome 6 Free", FontAwesome;
     font-feature-settings: 'liga' 1, 'ss02' 1;  /* fix for Chrome */
 }
 
@@ -87,6 +87,8 @@ i, em {
 .site-avatar {
     border-radius: 50%;
     max-width: 9.5rem;
+    padding: initial;
+    margin: initial;
 }
 
 .title-hav-wrapper {
@@ -141,6 +143,8 @@ nav menu {
 }
 
 
+
+
 /* Home Page Overrides */
 
 .homepage-wrapper {
@@ -165,7 +169,7 @@ nav menu {
 }
 
 .home-header .site-nav {
-    font-size: 1.125rem;
+    font-size: 1rem;
     max-width: unset;
 
 }
@@ -258,12 +262,16 @@ a:active, a:visited {
 /* List styling */
 
 ol, ul {
-    margin-left: 1.25rem;
-    padding-inline-start: 0.5rem;;
+    margin-left: 1.5rem;
+    padding-inline-start: 0.55rem;
 }
 
 ul {
     list-style-type: '-  ';
+}
+
+ol li {
+    padding-left: 0.5rem;
 }
 
 ul li::marker {
@@ -304,31 +312,57 @@ li.task-list-item > input + label::before {
 /* Image styling */
 
 img {
-    max-width: 48.5rem;
-    padding: 0 1rem;
+    border-radius: var(--border-radius-large);
+    height: auto;
+    padding: 0.3125rem;
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
 }
 
-.w-50 {
-    width: 50%;
+.w-25, img.w-25 + em {
+    width: 25% !important;
 }
 
-.w-75 {
-    width: 75%;
+.w-50, img.w50 + em {
+    width: 50% !important;
 }
 
+.w-75, img.w75 + em {
+    width: 75% !important;
+}
 
+img + em {
+    text-align: center;
+    display: block;
+    color: var(--text-secondary);
+    font-size: smaller;
+}
 
 
 /* Layout Hacks */
 
-.left {
+.left, .left + em {
     float: left;
+    margin-right: 1.25rem;
 }
 
-.right {
+.right, .right + em {
     float: right;
+    margin-left: 1.25rem;
 }
 
+.left + em {
+    margin-right: 1px;
+}
+
+.right + em {
+    margin-left: 1px;
+}
+
+.normal {
+    display: inline;
+}
 
 
 
@@ -407,4 +441,161 @@ code[class*=language-] {
 
 pre {
     padding: 0 !important;
+    counter-reset: lineNumber;
+}
+
+.filename {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: small;
+    padding-bottom: 0;
+    padding: 0.5rem;
+    border: solid 0.125rem rgba(255, 255, 255, 0.10);
+    border-top-left-radius: var(--code-border-radius);
+    border-top-right-radius: var(--code-border-radius);
+    border-bottom: 0;
+    margin: 1.5rem 3rem 0 3rem;
+}
+
+.filename::before {
+    content: "File: ";
+}
+
+p.filename + pre {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+pre:not([class*=language-]), code:not([class*=language-]) {
+    font-family: monospace;
+    color: rgba(255, 165, 0, 0.8);
+    padding: 0.1875rem, 0.3125rem;
+    background-color: rgba(255, 255, 255, 0.10);
+    word-wrap: break-word;
+}
+
+code.filepath {
+    color: var(--text-strong);
+    font-weight: bold;
+    background: none;
+    border: none;
+}
+
+
+/* Table styling */
+
+table, thead, tbody, tr, td {
+    border-style: solid;
+    border-color: inherit;
+    border-width: 0;
+}
+
+td, th {
+    padding: 0.5rem;
+}
+
+table {
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: var(--border-radius-large);
+    padding: 0.625rem;
+    vertical-align: middle;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: solid 0.0625rem var(--text-strong);
+    padding: 0.5rem;
+}
+
+
+
+/* Prompt styling */
+
+[class*=prompt-]::before {
+    content: unset;
+    left: 0.3125rem;
+    padding: 0;
+    margin: 0.625rem;
+    margin-top: 0;
+    position: absolute;
+    font-family: var(--icon-font) !important;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    line-height: 1rem;
+}
+
+[class*=prompt-] {
+    border-radius: 0.5rem;
+    background-color: var(--prompt-background-color);
+    color: var(--text-prompt);
+    position: relative;
+    padding: 1.25rem;
+    padding-left: 2.5rem;
+    max-width: 75%;
+    line-height: 1rem;
+    height: auto;
+}
+
+[class*=prompt-] p {
+    margin-top: 0;
+    display: block;
+}
+
+.prompt-tip {
+    background-color: rgba(22, 60, 36, 0.64);
+}
+
+.prompt-tip::before {
+    content: "\f0eb";
+    color: rgba(15, 164, 15, 0.81);
+}
+
+.prompt-info {
+    background-color: rgba(7, 59, 104, 0.8);
+}
+
+.prompt-info::before {
+    content: "\f05a";
+    color: rgb(0, 117, 209);
+}
+
+.prompt-warning {
+    background-color: rgba(90, 69, 3, 0.88);
+}
+
+.prompt-warning::before {
+    content: "\f05a";
+    color: rgba(255, 165, 0, 0.8);
+}
+
+.prompt-error {
+    background-color: rgba(86, 28, 8, 0.8);
+}
+
+.prompt-error::before {
+    content: '\f071';
+    color: rgb(205, 2, 2);
+}
+
+
+
+
+/* Footnotes styling */
+
+.footnotes {
+    font-size: small;
+}
+
+.footnotes p {
+    padding-bottom: 0.3125rem;
+    margin-bottom: 0.3125rem;
+    margin-block: 0;
+}
+
+
+hr {
+    width: 70%;
+    color: var(--text-secondary);
 }

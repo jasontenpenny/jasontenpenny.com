@@ -27,8 +27,15 @@ Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt a. Maecenas int
 ### Ordered list
 
 1. Firstly
-2. Secondly
-3. Thirdly
+1. Secondly
+1. Thirdly
+1. Another
+1. Again
+1. Yes
+1. Yet another
+1. One more
+1. Just kidding
+1. Ok now I'm done
 
 ### Unordered list
 
@@ -154,29 +161,29 @@ $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
 
 ### Default (with caption)
 
-![Desktop View](/assets/images/openin4_overview.png)
+![Desktop View](/assets/images/avatar.JPG)
 _Full screen width and center alignment_
 
 ### Left aligned
 
-![Desktop View](/assets/images/openin4_overview.png){: width="972" .w-75 .normal}
+![Desktop View](/assets/images/avatar.JPG){: width="972" .w-75 .normal}
 
 ### Float to left
 
-![Desktop View](/assets/images/openin4_overview.png){: width="972" .w-50 .left}
+![Desktop View](/assets/images/avatar.JPG){: width="972" .w-50 .left}
 Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
 ### Float to right
 
-![Desktop View](/assets/images/openin4_overview.png){: width="972" .w-50 .right}
+![Desktop View](/assets/images/avatar.JPG){: width="972" .w-50 .right}
 Praesent maximus aliquam sapien. Sed vel neque in dolor pulvinar auctor. Maecenas pharetra, sem sit amet interdum posuere, tellus lacus eleifend magna, ac lobortis felis ipsum id sapien. Proin ornare rutrum metus, ac convallis diam volutpat sit amet. Phasellus volutpat, elit sit amet tincidunt mollis, felis mi scelerisque mauris, ut facilisis leo magna accumsan sapien. In rutrum vehicula nisl eget tempor. Nullam maximus ullamcorper libero non maximus. Integer ultricies velit id convallis varius. Praesent eu nisl eu urna finibus ultrices id nec ex. Mauris ac mattis quam. Fusce aliquam est nec sapien bibendum, vitae malesuada ligula condimentum.
 
 ### Dark/Light mode & Shadow
 
 The image below will toggle dark/light mode based on theme preference, notice it has shadows.
 
-![light mode only](/assets/images/openin4_overview.png){: .light .w-75 .shadow .rounded-10 w='1212' }
-![dark mode only](/assets/images/openin4_overview.png){: .dark .w-75 .shadow .rounded-10 w='1212' }
+![light mode only](/assets/images/avatar.JPG){: .light .w-75 .shadow .rounded-10 w='1212' }
+![dark mode only](/assets/images/avatar.JPG){: .dark .w-75 .shadow .rounded-10 w='1212' }
 
 ## Video
 
