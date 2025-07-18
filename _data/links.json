@@ -1,0 +1,27 @@
+[
+{
+  "label": "bluesky",
+  "icon-class": "fa-brands fa-bluesky",
+  "url": "https://bsky.app/profile/jasontenpenny.com"
+},
+{
+  "label": "linkedin",
+  "icon-class": "fa-brands fa-linkedin",
+  "url": "https://linkedin.com/in/jasontenpenny"
+},
+{
+  "label": "github",
+  "icon-class": "fa-brands fa-github",
+  "url": "https://github.com/jasontenpenny"
+},
+{
+  "label": "mastodon",
+  "icon-class": "fa-brands fa-mastodon",
+  "url": "https://mastodon.social/@jasontenpenny"
+},
+{
+  "label": "email",
+  "icon-class": "fa-solid fa-envelope",
+  "url": "mailto:hello@jasontenpenny.com"
+}
+]

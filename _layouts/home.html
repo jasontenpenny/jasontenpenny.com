@@ -1,0 +1,70 @@
+---
+layout: default.html
+---
+
+<!--{% include 'header.html' %}
+<main class="page-wrapper">
+    <header class="page-header">
+        <h1>{{ title }}</h1>
+    </header>
+    <article class="page-content">
+        {{ content }}
+    </article>
+</main>
+{% include 'footer.html' %}
+-->
+
+<div class="homepage-wrapper">
+<header class="home-header">
+    <img class="home-avatar" src="/assets/images/avatar.JPG" />
+    <div class="title-nav-wrapper">
+        <div class="site-title">Jason Tenpenny</div>
+        {% include 'nav.html' %}
+    </div>
+</header>
+
+<main class="home-wrapper">
+    <article class="page-content">
+        {{ content }}
+                <section class="social-links">
+            {%- for link in links -%}
+                <div class="social-link link-{{ link.label }}"><a href="{{ link.url }}" {%- if link.label == "mastodon" -%}rel="me"{%- endif -%}><i class="{{ link.icon-class }}"></i></a></div>
+            {%- endfor -%}
+            <!--<div class="social-link bluesky"><a href="https://bsky.app/profile/jasontenpenny.com">Bluesky</a></div>
+            <div class="social-link linkedin"><a href="https://linkedin.com/jasontenpenny">Linkedin</a></div>
+            <div class="social-link github"><a href="https://github.com/jasontenpenny">Github</a></div>-->
+        </section>
+
+    </article>
+</main>
+{% include 'footer.html' %}
+</div>
+
+<!--
+<div class="homepage-wrapper">
+<div class="homepage-content">
+    <section class="avatar-wrapper">
+        <img class="avatar" src="/assets/images/avatar.JPG">
+    </section>
+    <section class="homepage-content-wrapper">
+        <section class="site-header">
+            {% include 'header.html' %}
+        </section>
+
+        {{ content }}
+
+        <section class="social-links">
+            {%- for link in links -%}
+                <div class="social-link link-{{ link.label }}"><a href="{{ link.url }}" {%- if link.label == "mastodon" -%}rel="me"{%- endif -%}><i class="{{ link.icon-class }}"></i></a></div>
+            {%- endfor -%}
+            <!--<div class="social-link bluesky"><a href="https://bsky.app/profile/jasontenpenny.com">Bluesky</a></div>
+            <div class="social-link linkedin"><a href="https://linkedin.com/jasontenpenny">Linkedin</a></div>
+            <div class="social-link github"><a href="https://github.com/jasontenpenny">Github</a></div>--
+        </section>
+    </section>
+
+<div class="clear-fix"></div>
+</div>
+{% include 'footer.html' %}
+</div>
+-->

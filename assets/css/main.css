@@ -1,0 +1,459 @@
+/* Base styling */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --text-primary: rgb(225, 223, 223);
+    --text-secondary: rgb(128, 128, 128);
+    --text-link: rgb(77, 126, 232);
+    --text-strong: rgb(255, 255, 255);
+    --text-quote: rgb(187, 236, 173);
+    --text-prompt: rgb(216, 212, 212, 0.75);
+    --border-radius-large: 0.625rem;
+    --border-radius-small: 0.3125rem;
+    --code-border-radius: 0.5rem;
+    --background-primary: rgb(20, 20, 20);
+    --background-hover: rgb(50, 50, 50);
+    font-family: Inter, sans-serif;
+    --icon-font: "Font Awesome 6 Free";
+    font-feature-settings: 'liga' 1, 'ss02' 1;  /* fix for Chrome */
+}
+
+@supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+}
+
+@media (prefers-color-scheme: light) {
+    .dark {
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .light {
+        display: none;
+    }
+}
+
+html {
+    background-color: var(--background-primary);
+    margin: auto;
+}
+
+body {
+    font-size: 1rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.site-wrapper {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    padding: 0.75rem;
+}
+
+b, strong {
+    font-weight: bold;
+    color: var(--text-strong);
+}
+
+i, em {
+    font-style: italic;
+}
+
+.page-wrapper {
+    margin-top: 2rem;
+}
+
+
+/* Site Header styling */
+
+.site-header {
+    max-width: 50rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.site-title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.site-avatar {
+    border-radius: 50%;
+    max-width: 9.5rem;
+}
+
+.title-hav-wrapper {
+    width: 100%;
+}
+
+
+/* Site Navigation styling */
+
+.site-nav {
+    max-width: 37rem;
+    width: 100%;
+}
+
+nav {
+    font-size: 0.825rem;
+}
+
+nav menu li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+}
+
+nav menu {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+/* Site Footer styling */
+
+.site-footer {
+    padding: 2rem 0 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.footer-content {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.clear-fix {
+    visibility: hidden;
+    display: block;
+    clear: both;
+    content: '.';
+}
+
+
+/* Home Page Overrides */
+
+.homepage-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-header {
+    max-width: 50rem;
+    width: 100%;
+    gap: 1rem;
+    text-align: center;
+}
+
+.home-header .site-title {
+    font-size: 2.5rem;
+    padding-top: 1rem;
+}
+
+.home-header .site-nav {
+    font-size: 1.125rem;
+    max-width: unset;
+
+}
+
+.home-avatar {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.home-wrapper {
+    text-align: center;
+}
+
+
+
+/* Headings */
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    line-height: 1.5rem;
+    padding-top: 1rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.125rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+h5 {
+    font-size: 0.825rem;
+}
+
+h6 {
+    font-size: 0.75rem;
+}
+
+
+/* Blockquote styling */
+
+blockquote {
+    color: var(--text-quote);
+    margin-inline-start: 1.25rem;
+    position: relative;
+    padding-left: 1.25rem;
+    margin-right: 5rem;
+}
+
+blockquote::before {
+    content: '> ';
+    position: absolute;
+    left: -1.25rem;
+    padding-left: 1.25rem;
+}
+
+blockquote > p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/* Link styling */
+a {
+    color: var(--text-link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active, a:visited {
+    text-decoration: none;
+}
+
+
+
+/* List styling */
+
+ol, ul {
+    margin-left: 1.25rem;
+    padding-inline-start: 0.5rem;;
+}
+
+ul {
+    list-style-type: '-  ';
+}
+
+ul li::marker {
+    color: var(--text-secondary);
+    font-weight: bold;
+}
+
+ol li::marker {
+    color: var(--text-secondary);
+}
+
+
+
+/* Task List styling */
+
+.task-list-item {
+    list-style-type: none;
+}
+
+li.task-list-item > input {
+    display: none;
+}
+
+li.task-list-item > input + label::before {
+    content: "";
+    font-family: var(--icon-font);
+    color: var(--text-secondary);
+    padding-right: 0.3rem;
+}
+
+.task-list-item > input:checked + label::before {
+    content: "";
+    color: var(--text-secondary);
+}
+
+
+
+/* Image styling */
+
+img {
+    max-width: 48.5rem;
+    padding: 0 1rem;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+
+
+
+/* Layout Hacks */
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+
+
+
+/* Brand colors */
+
+.social-links a {
+    color: var(--text-secondary);
+}
+
+.social-links {
+    font-size: 2.5rem;
+}
+
+.social-links div {
+    display: inline;
+    padding: 0 0.5rem;
+}
+
+.link-bluesky i:hover {
+    color: #0085ff;
+}
+
+.link-linkedin i:hover {
+    color: #2867b2;
+}
+
+.link-github i:hover {
+    color: #ffffff;
+}
+
+.link-mastodon i:hover {
+    color: #6364ff;
+}
+
+.link-email i:hover {
+    color: #ffffff;
+}
+
+
+
+/* Code Blocks */
+
+pre, code {
+    border-radius: var(--code-border-radius) !important;
+}
+
+pre[class*="language-"]::before {
+    content: attr(data-language);
+    float: right;
+    font-size: small;
+    color: var(--background-primary);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-bottom-left-radius: var(--code-border-radius);
+    padding: 0.1875rem 0.3125rem;
+    text-shadow: none;
+    font-weight: bold;
+}
+
+pre[class*=language-] {
+    padding-top: 0;
+    padding-inline: 1rem 0 !important;
+    background-color: rgba(255, 255, 255, 0.10) !important;
+    margin-left: 3rem !important;
+    margin-right: 3rem !important;
+}
+
+pre[class=language-text]::before {
+    content: unset;
+}
+
+code[class*=language-] {
+    padding-top: 0;
+    display: block !important;
+    margin: 1rem !important;
+}
+
+pre {
+    padding: 0 !important;
+}
+
+/* Homepage layout overrides 
+
+.homepage-wrapper {
+    height: 100%;
+    position: relative;
+}
+
+.homepage-content {
+    margin: auto;
+    position: absolute;
+    width: 100%;
+    max-width: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.homepage-content-wrapper {
+    padding-left: 2rem;
+    display: block;
+    float: right;
+    margin: auto;
+    width: 66%;
+    height: auto;
+}
+
+.homepage-content-wrapper .site-title {
+    margin-top: 0;
+}
+
+.avatar-wrapper {
+    width: 33%;
+    display: block;
+    float: left;
+}
+
+.avatar {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50%;
+}
+
+/*.homepage-wrapper > footer {
+    float: left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}*/
