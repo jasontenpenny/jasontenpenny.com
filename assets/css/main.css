@@ -145,6 +145,8 @@ nav menu {
 
 .homepage-wrapper {
     position: absolute;
+    width: 100%;
+    max-width: 50rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -338,6 +340,7 @@ img {
 
 .social-links {
     font-size: 2.5rem;
+    margin-top: 1.75rem;
 }
 
 .social-links div {
@@ -389,8 +392,7 @@ pre[class*=language-] {
     padding-top: 0;
     padding-inline: 1rem 0 !important;
     background-color: rgba(255, 255, 255, 0.10) !important;
-    margin-left: 3rem !important;
-    margin-right: 3rem !important;
+    margin: 1.5rem 3rem !important;
 }
 
 pre[class=language-text]::before {
@@ -406,54 +408,3 @@ code[class*=language-] {
 pre {
     padding: 0 !important;
 }
-
-/* Homepage layout overrides 
-
-.homepage-wrapper {
-    height: 100%;
-    position: relative;
-}
-
-.homepage-content {
-    margin: auto;
-    position: absolute;
-    width: 100%;
-    max-width: 800px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.homepage-content-wrapper {
-    padding-left: 2rem;
-    display: block;
-    float: right;
-    margin: auto;
-    width: 66%;
-    height: auto;
-}
-
-.homepage-content-wrapper .site-title {
-    margin-top: 0;
-}
-
-.avatar-wrapper {
-    width: 33%;
-    display: block;
-    float: left;
-}
-
-.avatar {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 50%;
-}
-
-/*.homepage-wrapper > footer {
-    float: left;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-}*/
