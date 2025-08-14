@@ -75,7 +75,7 @@ Moon
 > An example showing the `warning` type prompt.
 {: .prompt-warning }
 
-> An example showing the `error` type prompt.
+> An example showing the `error` type prompt. This one is really long so that I can make sure that line breaks occur as expected as well as the alignment of the icon.
 {: .prompt-error }
 <!-- markdownlint-restore -->
 
@@ -124,11 +124,11 @@ fi;
 
 /sass/jekyll-theme-chirpy.scss {: .filename}
 
-```sass {: file='_sass/jekyll-theme-chirpy.scss'}
+```sass {: file=_sass/jekyll-theme-chirpy.scss }
 @import
   "colors/light-typography",
   "colors/dark-typography";
-```
+``` 
 
 ## Mathematics
 

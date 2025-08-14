@@ -4,17 +4,9 @@
 }
 
 :root {
-    --text-primary: rgb(225, 223, 223);
-    --text-secondary: rgb(128, 128, 128);
-    --text-link: rgb(77, 126, 232);
-    --text-strong: rgb(255, 255, 255);
-    --text-quote: rgb(187, 236, 173);
-    --text-prompt: rgba(216, 212, 212, 0.75);
     --border-radius-large: 0.625rem;
     --border-radius-small: 0.3125rem;
     --code-border-radius: 0.5rem;
-    --background-primary: rgb(20, 20, 20);
-    --background-hover: rgb(50, 50, 50);
     font-family: Inter, sans-serif;
     --icon-font: "Font Awesome 6 Free", FontAwesome;
     font-feature-settings: 'liga' 1, 'ss02' 1;  /* fix for Chrome */
@@ -25,12 +17,50 @@
 }
 
 @media (prefers-color-scheme: light) {
+    :root {
+        --text-primary: rgb(20, 20, 20);
+        --text-secondary: rgb(128, 128, 128);
+        --text-link: rgb(77, 126, 232);
+        --text-strong: rgb(10, 10, 10);
+        --text-quote: rgb(134, 199, 116);
+        --text-prompt: rgb(216, 212, 212);
+        --background-primary: rgb(255, 253, 253);
+        --background-hover: rgb(200, 200, 200);
+        --generic-icon-color: rgb(0, 0, 0);
+        --code-language-background-color: rgba(20, 20, 20, 0.6);
+        --code-background-color: rgba(0, 0, 0, 0.075);
+        --prompt-tip-background: rgb(22, 60, 36);
+        --prompt-info-background: rgb(7, 59, 104);
+        --prompt-warning-background: rgb(90, 69, 3);
+        --prompt-error-background: rgb(86, 28, 8);
+        --code-inline-color: rgb(255, 165, 0);
+    }
+
     .dark {
         display: none;
     }
 }
 
 @media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: rgb(225, 223, 223);
+        --text-secondary: rgb(128, 128, 128);
+        --text-link: rgb(77, 126, 232);
+        --text-strong: rgb(240, 240, 240);
+        --text-quote: rgb(187, 236, 173);
+        --text-prompt: rgba(216, 212, 212, 0.75);
+        --background-primary: rgb(20, 20, 20);
+        --background-hover: rgb(50, 50, 50);
+        --generic-icon-color: rgb(255, 255, 255);
+        --code-language-background-color: rgba(255, 255, 255, 0.6);
+        --code-background-color: rgba(255, 255, 255, 0.10);
+        --prompt-tip-background: rgba(22, 60, 36, 0.64);
+        --prompt-info-background: rgba(7, 59, 104, 0.8);
+        --prompt-warning-background: rgba(90, 69, 3, 0.88);
+        --prompt-error-background: rgba(86, 28, 8, 0.8);
+        --code-inline-color: rgba(255, 165, 0, 0.8);
+    }
+
     .light {
         display: none;
     }
@@ -91,9 +121,11 @@ i, em {
     margin: initial;
 }
 
-.title-hav-wrapper {
-    width: 100%;
+.site-title a, .site-title a:hover, .site-title a:active, .site-title a:visited {
+    color: var(--text-primary);
+    text-decoration: none;
 }
+
 
 
 /* Site Navigation styling */
@@ -107,16 +139,17 @@ nav {
     font-size: 0.825rem;
 }
 
-nav menu li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 0.5rem 0.5rem;
-}
-
 nav menu {
     padding: 0;
     margin: 0;
 }
+
+nav menu li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.5rem;
+}
+
 
 
 
@@ -193,6 +226,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     line-height: 1.5rem;
     padding-top: 1rem;
+    color: var(--text-strong);
 }
 
 h1 {
@@ -296,14 +330,14 @@ li.task-list-item > input {
 }
 
 li.task-list-item > input + label::before {
-    content: "";
+    content: "\f0c8";
     font-family: var(--icon-font);
     color: var(--text-secondary);
     padding-right: 0.3rem;
 }
 
 .task-list-item > input:checked + label::before {
-    content: "";
+    content: "\f14a";
     color: var(--text-secondary);
 }
 
@@ -324,11 +358,11 @@ img {
     width: 25% !important;
 }
 
-.w-50, img.w50 + em {
+.w-50, img.w-50 + em {
     width: 50% !important;
 }
 
-.w-75, img.w75 + em {
+.w-75, img.w-75 + em {
     width: 75% !important;
 }
 
@@ -391,7 +425,7 @@ img + em {
 }
 
 .link-github i:hover {
-    color: #ffffff;
+    color: var(--generic-icon-color);
 }
 
 .link-mastodon i:hover {
@@ -399,7 +433,7 @@ img + em {
 }
 
 .link-email i:hover {
-    color: #ffffff;
+    color: var(--generic-icon-color);
 }
 
 
@@ -415,7 +449,7 @@ pre[class*="language-"]::before {
     float: right;
     font-size: small;
     color: var(--background-primary);
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: var(--code-language-background-color);
     border-bottom-left-radius: var(--code-border-radius);
     padding: 0.1875rem 0.3125rem;
     text-shadow: none;
@@ -425,7 +459,7 @@ pre[class*="language-"]::before {
 pre[class*=language-] {
     padding-top: 0;
     padding-inline: 1rem 0 !important;
-    background-color: rgba(255, 255, 255, 0.10) !important;
+    background-color: var(--code-background-color) !important;
     margin: 1.5rem 3rem !important;
 }
 
@@ -450,7 +484,7 @@ pre {
     font-size: small;
     padding-bottom: 0;
     padding: 0.5rem;
-    border: solid 0.125rem rgba(255, 255, 255, 0.10);
+    border: solid 0.125rem var(--code-background-color);
     border-top-left-radius: var(--code-border-radius);
     border-top-right-radius: var(--code-border-radius);
     border-bottom: 0;
@@ -470,9 +504,9 @@ p.filename + pre {
 
 pre:not([class*=language-]), code:not([class*=language-]) {
     font-family: monospace;
-    color: rgba(255, 165, 0, 0.8);
+    color: var(--code-inline-color);
     padding: 0.1875rem, 0.3125rem;
-    background-color: rgba(255, 255, 255, 0.10);
+    background-color: var(--code-background-color);
     word-wrap: break-word;
 }
 
@@ -497,7 +531,7 @@ td, th {
 }
 
 table {
-    background-color: rgba(255, 255, 255, 0.10);
+    background-color: var(--code-background-color);
     border-radius: var(--border-radius-large);
     padding: 0.625rem;
     vertical-align: middle;
@@ -544,7 +578,7 @@ th {
 }
 
 .prompt-tip {
-    background-color: rgba(22, 60, 36, 0.64);
+    background-color: var(--prompt-tip-background);
 }
 
 .prompt-tip::before {
@@ -553,7 +587,7 @@ th {
 }
 
 .prompt-info {
-    background-color: rgba(7, 59, 104, 0.8);
+    background-color: var(--prompt-info-background);
 }
 
 .prompt-info::before {
@@ -562,7 +596,7 @@ th {
 }
 
 .prompt-warning {
-    background-color: rgba(90, 69, 3, 0.88);
+    background-color: var(--prompt-warning-background);
 }
 
 .prompt-warning::before {
@@ -571,7 +605,7 @@ th {
 }
 
 .prompt-error {
-    background-color: rgba(86, 28, 8, 0.8);
+    background-color: var(--prompt-error-background);
 }
 
 .prompt-error::before {
@@ -585,7 +619,7 @@ th {
 /* Footnotes styling */
 
 .footnotes {
-    font-size: small;
+    font-size: x-small;
 }
 
 .footnotes p {

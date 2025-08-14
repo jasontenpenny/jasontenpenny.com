@@ -32,6 +32,11 @@ export default function(eleventyConfig) {
             "data-language": function(context) {
                 return context.language;
             }
+        },
+        codeAttributes: {
+            "data-language": function(context) {
+                return context.language;
+            }
         }
     });
 }
