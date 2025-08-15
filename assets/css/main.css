@@ -78,7 +78,7 @@ body {
 }
 
 .site-wrapper {
-    max-width: 800px;
+    max-width: 50rem;
     width: 100%;
     margin: auto;
     padding: 0.75rem;
@@ -444,6 +444,14 @@ pre, code {
     border-radius: var(--code-border-radius) !important;
 }
 
+pre:not([class*=language-]), code:not([class*=language-]) {
+    font-family: monospace;
+    color: var(--code-inline-color);
+    padding: 0.01rem 0.3rem;
+    background-color: var(--code-background-color);
+    word-wrap: break-word;
+}
+
 pre[class*="language-"]::before {
     content: attr(data-language);
     float: right;
@@ -500,14 +508,6 @@ p.filename + pre {
     padding-top: 0 !important;
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
-}
-
-pre:not([class*=language-]), code:not([class*=language-]) {
-    font-family: monospace;
-    color: var(--code-inline-color);
-    padding: 0.1875rem, 0.3125rem;
-    background-color: var(--code-background-color);
-    word-wrap: break-word;
 }
 
 code.filepath {
@@ -567,8 +567,7 @@ th {
     position: relative;
     padding: 1.25rem;
     padding-left: 2.5rem;
-    max-width: 75%;
-    line-height: 1rem;
+    line-height: 1.25rem;
     height: auto;
 }
 
