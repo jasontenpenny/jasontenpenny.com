@@ -15,7 +15,11 @@ layout: default.html
         {{ content }}
                 <section class="social-links">
             {%- for link in links -%}
-                <div class="social-link link-{{ link.label }}"><a href="{{ link.url }}" {%- if link.label == "mastodon" -%}rel="me"{%- endif -%}><i class="{{ link.icon-class }}"></i></a></div>
+                <div class="social-link link-{{ link.label }}">
+                    {%- if link.label == "email" -%}
+                    {% assign email = link.url | split: '@' %}
+                    <a href="javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')">
+                    {%- else -%}<a href="{{ link.url }}" {%- if link.label == "mastodon" -%}rel="me"{%- endif -%}>{%- endif -%}<i class="{{ link.icon-class }}"></i></a></div>
             {%- endfor -%}
         </section>
     </article>

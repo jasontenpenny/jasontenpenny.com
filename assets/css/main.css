@@ -175,6 +175,9 @@ nav menu li {
     content: '.';
 }
 
+.site-footer strong, .site-footer b {
+    color: var(--text-secondary);
+}
 
 
 
@@ -436,6 +439,10 @@ img + em {
     color: var(--generic-icon-color);
 }
 
+/*.link-email {
+    width: 4.125rem;
+    overflow: hidden;
+}*/
 
 
 /* Code Blocks */
