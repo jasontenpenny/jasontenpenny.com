@@ -20,6 +20,11 @@
   "url": "https://mastodon.social/@jasontenpenny"
 },
 {
+  "label": "links",
+  "icon-class": "fa-solid fa-link",
+  "url": "https://links.jasontenpenny.com"
+},
+{
   "label": "email",
   "icon-class": "fa-solid fa-envelope",
   "url": "hello@jasontenpenny.com"

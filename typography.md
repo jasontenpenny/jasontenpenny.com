@@ -1,6 +1,8 @@
 ---
 title: Typography Test
 excerpt: "A post that demonstrates all the typographical elements and how they're themed."
+eleventyExcludeFromCollections: true
+permalink: "/dev/typography/index.html"
 ---
 
 This post is to show Markdown syntax rendering. You can also use it as an example of writing. Now, let's start looking at text and typography.

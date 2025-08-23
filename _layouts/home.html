@@ -12,13 +12,13 @@ layout: default.html
 </header>
 <main class="home-wrapper">
     <article class="page-content">
-        {{ content }}
+        <p>{{ site.summary }}</p>
                 <section class="social-links">
             {%- for link in links -%}
                 <div class="social-link link-{{ link.label }}">
                     {%- if link.label == "email" -%}
-                    {% assign email = link.url | split: '@' %}
-                    <a href="javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')">
+                    {% assign address = link.url | split: '@' %}
+                    <a href="javascript:location.href = 'mailto:' + ['{{ address[0] }}','{{ address[1] }}'].join('@')">
                     {%- else -%}<a href="{{ link.url }}" {%- if link.label == "mastodon" -%}rel="me"{%- endif -%}>{%- endif -%}<i class="{{ link.icon-class }}"></i></a></div>
             {%- endfor -%}
         </section>

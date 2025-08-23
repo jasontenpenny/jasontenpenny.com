@@ -3,6 +3,7 @@ import markdownItTaskCheckbox from "markdown-it-task-checkbox";
 import markdownItAttrs from "markdown-it-attrs";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import markdownItFootnote from "markdown-it-footnote";
+import { DateTime } from "luxon";
 
 export default function(eleventyConfig) {
 
@@ -11,12 +12,18 @@ export default function(eleventyConfig) {
 
     // enables passthrough files in the following directories
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("robots.txt");
 
     // allows for rewriting relative links
     eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
     // enables IdAttributePlugin to hyperlink headings
     eleventyConfig.addPlugin(IdAttributePlugin);
+
+    // date formatting filters
+    eleventyConfig.addFilter("isoDate", dateObj => {
+        return DateTime.fromJSDate(dateObj).toISO({ precision: 'second' });
+    })
 
 
     // make tweaks to markdown processing

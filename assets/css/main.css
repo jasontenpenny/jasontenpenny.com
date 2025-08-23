@@ -8,7 +8,7 @@
     --border-radius-small: 0.3125rem;
     --code-border-radius: 0.5rem;
     font-family: Inter, sans-serif;
-    --icon-font: "Font Awesome 6 Free", FontAwesome;
+    --icon-font: "Font Awesome 7 Free", FontAwesome;
     font-feature-settings: 'liga' 1, 'ss02' 1;  /* fix for Chrome */
 }
 
@@ -415,34 +415,25 @@ img + em {
 }
 
 .social-links div {
-    display: inline;
-    padding: 0 0.5rem;
+    display: inline-block;
+    margin: 0 0.5rem;
 }
 
 .link-bluesky i:hover {
-    color: #0085ff;
+    color: #0085ff !important;
 }
 
 .link-linkedin i:hover {
-    color: #2867b2;
-}
-
-.link-github i:hover {
-    color: var(--generic-icon-color);
+    color: #2867b2 !important;
 }
 
 .link-mastodon i:hover {
-    color: #6364ff;
+    color: #6364ff !important;
 }
 
-.link-email i:hover {
+[class*=link-] i:hover {
     color: var(--generic-icon-color);
 }
-
-/*.link-email {
-    width: 4.125rem;
-    overflow: hidden;
-}*/
 
 
 /* Code Blocks */
