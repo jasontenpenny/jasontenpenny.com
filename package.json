@@ -1,0 +1,22 @@
+{
+    "name": "jasontenpenny.com",
+    "version": "1.0.0",
+    "description": "Powers the landing page for jasontenpenny.com",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jasontenpenny/jasontenpenny.com.git"
+    },
+    "homepage": "https://github.com/jasontenpenny/jasontenpenny.com#readme",
+    "type": "module",
+    "dependencies": {
+        "@11ty/eleventy": "^3.1.2",
+        "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
+        "markdown-it-attrs": "^4.3.1",
+        "markdown-it-footnote": "^4.0.0",
+        "markdown-it-task-checkbox": "^1.0.6"
+    }
+}

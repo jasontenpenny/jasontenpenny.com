@@ -1,0 +1,28 @@
+---
+layout: default.html
+---
+
+<div class="homepage-wrapper">
+<header class="home-header">
+    <img class="home-avatar" src="/assets/images/avatar.JPG" />
+    <div class="title-nav-wrapper">
+        <div class="site-title">Jason Tenpenny</div>
+        {% include 'nav.html' %}
+    </div>
+</header>
+<main class="home-wrapper">
+    <article class="page-content">
+        <p>{{ site.summary }}</p>
+                <section class="social-links">
+            {%- for link in links -%}
+                <div class="social-link link-{{ link.label }}">
+                    {%- if link.label == "email" -%}
+                    {% assign address = link.url | split: '@' %}
+                    <a href="javascript:location.href = 'mailto:' + ['{{ address[0] }}','{{ address[1] }}'].join('@')">
+                    {%- else -%}<a href="{{ link.url }}" {%- if link.label == "mastodon" -%}rel="me"{%- endif -%}>{%- endif -%}<i class="{{ link.icon-class }}"></i></a></div>
+            {%- endfor -%}
+        </section>
+    </article>
+</main>
+{% include 'footer.html' %}
+</div>
