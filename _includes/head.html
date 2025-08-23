@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
+        <link rel="preconnect" href="https://rsms.me/">
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="/assets/css/vscode-theme.css" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" type="text/css" />
+
+        <!-- HTML Meta Tags-->
         <title>
             {%- unless layout == 'home' -%}
                 {%- if title -%}
@@ -9,14 +17,10 @@
             {%- endunless -%}
             {{ site.name }}
         </title>
-        <link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
-        <link rel="preconnect" href="https://rsms.me/">
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-        <link rel="stylesheet" href="/assets/css/vscode-theme.css" type="text/css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" type="text/css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta property="description" content="{{ excerpt }}">
         <link rel="canonical" href="{{ site.url }}{{ page.url }} ">
+
+        <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="{{ title }}">
         <meta property="og:locale" content="en_US">
         <meta property="og:url" content="{{ site.url }}{{ page.url }}">
@@ -26,10 +30,15 @@
         <meta property="og:image" content="{%- if featured-image -%}{{ site.url }}{{ featured-image.path }}{%- else -%}{{ site.url }}{{ site.image-path}}{%- endif -%}">
         <meta property="og:image:alt" content="{%- if featured-image -%}{{ featured-image.alt }}{%- else -%}{{ site.image-alt }}{%- endif -%}">
         <meta property="article:published_time" content="{{ page.date | isoDate }}">
+
+        <!-- Twitter Meta Tags-->
         <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="{{ site.domain }}">
+        <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+        <meta property="twitter:title" content="{{ title }}">
+        <meta property="twitter:description" content="{{ excerpt }}">
         <meta property="twitter:image" content="{%- if featured-image -%}{{ site.url }}{{ featured-image.path }}{%- else -%}{{ site.url }}{{ site.image-path }}{%- endif -%}">
         <meta name="twitter:image:alt" content="{%- if featured-image -%}{{ featured-image.alt}}{%- else -%}{{ site.image-alt }}{%- endif -%}">
-        <meta property="twitter:title" content="{{ title }}">
         <meta name="twitter:site" content="{{ site.authorTwitterHandle }}">
     </head>
     <body>

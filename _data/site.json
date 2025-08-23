@@ -1,9 +1,10 @@
 {
     "name": "Jason Tenpenny",
-    "summary": "Tech geek | Azure Networking Support at Microsoft | Christian | Captain America fan | Coffe and whiskey drinker (though usually not together) | Opinions definitely my own",
+    "summary": "Tech geek | Azure Networking Support at Microsoft | Christian | Captain America fan | Coffee and whiskey drinker (though usually not together) | Opinions definitely my own",
     "url": "https://jasontenpenny.com",
+    "domain": "jasontenpenny.com",
     "image-path": "/assets/images/avatar.JPG",
-    "image-alt": "picture of Jason",
+    "image-alt": "profile picture of Jason",
     "authorName": "Jason Tenpenny",
     "authorBlueskyUrl": "https://bsky.app/profile/jasontenpenny.com",
     "authorBlueskyHandle": "@jasontenpenny.com",
