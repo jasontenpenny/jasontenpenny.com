@@ -419,18 +419,6 @@ img + em {
     margin: 0 0.5rem;
 }
 
-.link-bluesky i:hover {
-    color: #0085ff !important;
-}
-
-.link-linkedin i:hover {
-    color: #2867b2 !important;
-}
-
-.link-mastodon i:hover {
-    color: #6364ff !important;
-}
-
 [class*=link-] i:hover {
     color: var(--generic-icon-color);
 }
