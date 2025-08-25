@@ -1,6 +1,6 @@
 ---
 title: Open Any File with Visual Studio Code on Mac
-date: 2023-08-03 16:34:00
+date: 2023-08-03 16:34:00 -5
 tags: [mac tips, macos]
 category: General
 redirect_from: [/blog/general/2023/08/03/open-any-file-with-visual-studio-code-on-mac.html, /posts/open-any-file-with-visual-studio-code-on-mac/]

@@ -1,6 +1,6 @@
 ---
 title: Moving My Blog to 11ty - Part 1 (Initial deployment)
-date: 2025-03-03 20:35:00
+date: 2025-03-03 20:35:00 -6
 tags: [blog, 11ty, static website, github, web development]
 category: Web Development
 excerpt: This entry will cover creating the 11ty site and connecting it to Cloudflare Pages so that it's viewable publicly. This will consist of creating the GitHub repository, syncing that locally, installing 11ty, then creating the Cloudflare Pages config.

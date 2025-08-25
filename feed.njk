@@ -1,0 +1,40 @@
+---
+permalink: /blog/feed.xml
+layout: ""
+eleventyExcludeFromCollections: true
+metadata:
+    title: "Jason Tenpenny's Blog"
+    description: "A blog where I write about technology and other things that happen to interest me"
+    language: "en"
+    base: "https://jasontenpenny.com/blog/"
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language or page.lang }}">
+    <title>{{ metadata.title }}</title>
+    <subtitle>{{ site.summary }}</subtitle>
+    <link href="{{ site.url }}{{ permalink }}" rel="self" />
+    <link href="{{ metadata.base }}" rel="alternate" />
+    <updated>{{ collections.posts | getNewestCollectionItemDate | isoDate }}</updated>
+    <id>{{ metadata.base }}</id>
+    <icon>../assets/favicon/favicon.ico</icon>
+    <logo>../assets/favicon/favicon-96x96.png</logo>
+    <rights>© {% year %} {{ site.authorName }}</rights>
+    <author>
+        <name>{{ site.authorName }}</name>
+        <uri>{{ site.authorBlueskyUrl }}</uri>
+    </author>
+    {%- for post in collections.posts | reverse -%}
+    <entry>
+        <title>{{ post.data.title }}</title>
+        <link href="{{ site.url }}{{ post.url }}" title="{{ post.data.title }}" type="text/html" />
+        <updated>{{ post.date | isoDate }}</updated>
+        <id>{{ site.url }}{{ post.url }}</id>
+        <content src="{{ site.url }}{{ post.url }}" />
+        <category term="{{ post.data.category }}" />
+        <summary>{{ post.data.excerpt }}</summary>
+        <author>
+            <name>{{ site.authorName }}</name>
+        </author>
+    </entry>
+    {%- endfor -%}
+</feed>

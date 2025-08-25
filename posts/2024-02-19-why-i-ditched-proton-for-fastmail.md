@@ -1,6 +1,6 @@
 ---
 title: Why I ditched Proton for Fastmail
-date: 2024-02-19 13:22:00
+date: 2024-02-19 13:22:00 -6
 tags: [email service, privacy]
 category: General
 redirect_from: [/blog/general/2024/02/19/why-i-ditched-proton-for-fastmail.html, /posts/why-i-ditched-proton-for-fastmail/]

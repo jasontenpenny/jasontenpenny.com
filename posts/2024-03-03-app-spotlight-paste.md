@@ -1,6 +1,6 @@
 ---
 title: Mac App Spotlight - Paste
-date: 2024-03-03 18:38:00
+date: 2024-03-03 18:38:00 -6
 tags: [macos, mac apps, paste, clipboard management]
 category: App Spotlight
 featured-image: 

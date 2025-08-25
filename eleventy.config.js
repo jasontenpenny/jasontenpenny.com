@@ -4,7 +4,7 @@ import markdownItAttrs from "markdown-it-attrs";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import markdownItFootnote from "markdown-it-footnote";
 import { DateTime } from "luxon";
-import pluginRss from "@11ty/eleventy-plugin-rss";
+import feedPlugin from "@11ty/eleventy-plugin-rss";
 
 export default function(eleventyConfig) {
 
@@ -26,7 +26,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
     // enables RSS creation
-    eleventyConfig.addPlugin(pluginRss);
+    eleventyConfig.addPlugin(feedPlugin);
 
     // enables IdAttributePlugin to hyperlink headings
     eleventyConfig.addPlugin(IdAttributePlugin);
@@ -36,7 +36,10 @@ export default function(eleventyConfig) {
         return DateTime.fromJSDate(dateObj).toFormat("DDD");
     });
     eleventyConfig.addFilter("hoverDate", dateObj => {
-        return DateTime.fromJSDate(dateObj).toFormat("DDD 'at' t");
+        return DateTime.fromJSDate(dateObj).toFormat("DDD 'at' t 'UTC'");
+    });
+    eleventyConfig.addFilter("year", dateObj => {
+        return DateTime.fromJSDate(dateObj).toFormat('yyyy');
     });
     eleventyConfig.addFilter("isoDate", dateObj => {
         return DateTime.fromJSDate(dateObj).toISO({ precision: 'second' });
@@ -97,6 +100,9 @@ export default function(eleventyConfig) {
         });
         return [ ... new Set(gatheredTags)];
     });
+
+    // adds shortcodes
+    eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 }
 
 export const config = {

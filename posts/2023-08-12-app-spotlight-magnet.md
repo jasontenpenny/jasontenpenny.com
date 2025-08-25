@@ -1,6 +1,6 @@
 ---
 title: Mac App Spotlight - Magnet
-date: 2023-08-12 10:29:00
+date: 2023-08-12 10:29:00 -5
 tags: [macos, mac apps, magnet, window management]
 category: App Spotlight
 redirect_from: [/blog/app+spotlight/2023/08/12/app-spotlight-magnet.html, /posts/app-spotlight-magnet/]

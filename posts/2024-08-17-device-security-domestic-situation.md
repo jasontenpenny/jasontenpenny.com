@@ -1,6 +1,6 @@
 ---
 title: Securing Mobile Devices in a Complicated Domestic Situation
-date: 2024-08-17 18:50:00
+date: 2024-08-17 18:50:00 -5
 tags: [security, privacy, mobile device security, Apple devices]
 category: General
 redirect_from: /posts/device-security-domestic-situation/
