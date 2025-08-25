@@ -2,6 +2,9 @@
     <menu>
         <li>{%- if page.url == "/" -%}<strong>Home</strong>{%- else -%}<a href="/">Home</a>{%- endif -%}</li>
         <li>{%- if page.url == "/about/" -%}<strong>About Me</strong>{%- else -%}<a href="/about.md">About Me</a>{%- endif -%}</li>
-        <li><a href="https://blog.jasontenpenny.com">Blog</a></li>
+        <li>{%- if page.url == "/blog/" -%}<strong>Blog</strong>{%- else -%}<a href="/blog.md">Blog</a>{%- endif -%}<menu>
+            <li>{%- if page.url == "/blog/categories/" -%}<strong>Categories{%- else -%}<a href="/blog/categories">Categories</a>{%- endif -%}</li>
+            <li>{%- if page.url == "/blog/tags/" -%}<strong>Tags</strong>{%- else -%}<a href="/blog/tags">Tags</a>{%- endif -%}</li>
+        </menu></li>
     </menu>
 </nav>

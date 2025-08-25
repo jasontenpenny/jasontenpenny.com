@@ -1,0 +1,47 @@
+---
+layout: default.html
+permalink: "/blog/{%- if category -%}{{ category | slugify }}{%- else -%}uncategorized{%- endif -%}/{{ title | slugify }}/index.html"
+---
+{% include 'header.html' %}
+<main class="post-wrapper">
+    <header class="post-header">
+        <h1 class="post-title">{{ title }}</h1>
+        <div class="post-metadata">
+            <i class="fa-solid fa-clock icon-post-category"></i><span class="post-date" title="{{ page.date | hoverDate }}">{{ page.date | postDate }}</span><i class="fa-solid fa-user icon-post-category"></i><span class="post-author"><a href="{{ site.authorBlueskyUrl }}">{{ site.authorName }}</a></span><i class="fa-solid fa-folder-open icon-post-category"></i><span class="post-categories">
+            {%- if category -%}
+                <a class="post-category" href="/blog/{{ category | slugify }}">{{ category }}</a>
+                {%- else -%}
+                <em>Uncategorized</em>
+            {%- endif -%}
+            </span>
+            <br />
+            {%- if tags -%}
+            <i class="fa-solid fa-tags icon-post-tags"></i><span class="post-tags">
+                {%- for tag in tags -%}
+                    <a class="post-tag" href="/blog/tags/{{ tag | slugify }}/">{{ tag }}</a>
+                    {%- if not forloop.last -%}
+                        &nbsp;,&nbsp;
+                    {%- endif -%}
+                {%- endfor -%}
+            {%- endif -%}
+            </span>
+        </div>
+    </header>
+    <article class="post-content">
+        {%- if featured-image -%}
+        <img class="featured-image" alt="{{ featured-image.alt }}" src="{{ featured-image.path }}" />
+        {%- endif -%}
+        {{ content }}
+    </article>
+
+    {% assign previousPost = collections.posts | getPreviousCollectionItem: page %}
+    {% assign nextPost = collections.posts | getNextCollectionItem: page %}
+    <div class="continue-reading">
+        <hr />
+        <h2 class="continue-reading-label">Continue Reading</h2>
+    {% if previousPost %}<div class="previous-post"><strong>Previous Blog Post:</strong><br /><a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></div>{% endif %}
+    {% if nextPost %}<div class="next-post"><strong>Next Blog Post:</strong><br /><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></div>{% endif %}
+    </div>
+    <div class="clear-fix"></div>
+</main>
+{% include 'footer.html' %}

@@ -1,0 +1,23 @@
+---
+layout: default.html
+permalink: /blog/tags/index.html
+title: Tags
+---
+
+{% include 'header.html' %}
+
+<div class="page-wrapper">
+<section class="post-list">
+
+<h1>Tags</h1>
+
+<ul>
+{% for tag in collections.tags | sort %}
+  <li><a href="/blog/tags/{{ tag | slugify }}">{{ tag }}</a></li>
+{% endfor %}
+</ul>
+
+</section>
+</div>
+
+{% include 'footer.html' %}

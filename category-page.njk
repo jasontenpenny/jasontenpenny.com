@@ -1,0 +1,61 @@
+---
+layout: default.html
+pagination:
+    data: collections.categories
+    size: 1
+    alias: cat
+permalink: '/blog/{{ cat | slugify }}/index.html'
+title: Categorized Posts
+addAllPagesToCollections: false
+eleventyExcludeFromCollections: true
+---
+
+{% include 'header.html' %}
+
+<div class="page-wrapper">
+<section class="post-list">
+
+<h1>Posts in the “{{ cat }}” category</h1>
+
+{% for item in collections.posts | filterByCategory(cat) | reverse %}
+        <article class="post-entry">
+            <a class="post-link" href="{{ item.url }}">
+                <h2 class="post-entry-title">{{ item.data.title }}</h2>
+            </a>
+            <div class="post-entry-metadata">
+            <div><i class="fa-solid fa-clock icon-post-date"></i><span class="post-date" title="{{ post.date | hoverDate }}">{{ item.date | postDate }}</span>
+                <i class="fa-solid fa-user icon-post-author"></i><span class="post-author"><a href="{{ site.authorBlueskyUrl }}">{{ site.authorName }}</a></span></div>
+            <div><i class="fa-solid fa-folder-open icon-post-category"></i><span class="post-categories">
+                {%- if item.data.category -%}
+                    <a class="post-category" href="/blog/{{ item.data.category | slugify }}">{{ item.data.category }}</a>
+                    {%- else -%}
+                    <em>Uncategorized</em>
+                {%- endif -%}
+                </span></div>
+                <div class="newline-hack"></div>
+                <i class="fa-solid fa-tags icon-post-category"></i>
+                    {%- if item.data.tags -%}
+                    <span class="post-tags">
+                    {%- for tag in item.data.tags -%}
+                        <a href="/blog/tags/{{ tag | slugify }}/">{{ tag }}</a>
+                        {%- if not loop.last -%}&nbsp;,&nbsp;{%- endif -%}
+                    {%- endfor -%}
+                    </span>
+                    {%- else -%}
+                <span class="post-tags"><em>no tags</em></span>
+                {%- endif -%}
+            </div>
+            {%- if item.data.featured-image -%}
+            <img class="featured-image" alt="{{ item.data.featured-image.alt }}" src="{{ item.data.featured-image.path }}" />
+            {%- endif -%}
+            {%- if item.data.excerpt -%}
+                <div class="post-excerpt">{{ item.data.excerpt }}</div>
+            {%- else -%}
+            {%- endif -%}
+        </article>
+{% endfor %}
+
+</section>
+</div>
+
+{% include 'footer.html' %}

@@ -25,7 +25,7 @@
         --text-quote: rgb(134, 199, 116);
         --text-prompt: rgb(216, 212, 212);
         --background-primary: rgb(255, 253, 253);
-        --background-hover: rgb(200, 200, 200);
+        --background-hover: rgba(200, 200, 200, 0.4);
         --generic-icon-color: rgb(0, 0, 0);
         --code-language-background-color: rgba(20, 20, 20, 0.6);
         --code-background-color: rgba(0, 0, 0, 0.075);
@@ -50,7 +50,7 @@
         --text-quote: rgb(187, 236, 173);
         --text-prompt: rgba(216, 212, 212, 0.75);
         --background-primary: rgb(20, 20, 20);
-        --background-hover: rgb(50, 50, 50);
+        --background-hover: rgba(50, 50, 50, 0.25);
         --generic-icon-color: rgb(255, 255, 255);
         --code-language-background-color: rgba(255, 255, 255, 0.6);
         --code-background-color: rgba(255, 255, 255, 0.10);
@@ -97,6 +97,9 @@ i, em {
     margin-top: 2rem;
 }
 
+.post-wrapper {
+    margin-top: 2rem;
+}
 
 /* Site Header styling */
 
@@ -150,7 +153,21 @@ nav menu li {
     padding: 0.5rem;
 }
 
+menu menu {
+    display: none;
+    background-color: var(--background-primary);
+}
 
+menu li:hover menu {
+    display: block;
+    z-index: 500;
+    position: absolute;
+}
+
+menu menu li {
+    display: block;
+    padding: 0.5rem 1rem;
+}
 
 
 
@@ -222,8 +239,46 @@ nav menu li {
 
 
 
-/* Headings */
 
+/* Post metadata theming */
+.post-header {
+    font-size: 1.5rem;
+}
+
+.post-title {
+    line-height: 1.5rem;
+}
+
+.post-metadata {
+    font-size: 0.7rem;
+    padding-top: 0.3rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    line-height: 1rem;
+    margin-top: 0;
+    padding-left: 0;
+    vertical-align: middle;
+}
+
+.post-author, .post-date, .post-categories, .post-tags {
+    padding-right: 1rem;
+    vertical-align: middle;
+    line-height: 1rem;
+    padding-bottom: 0.25rem;
+}
+
+[class*=icon-post-] {
+    font-size: 0.85rem;
+    margin: 0.25rem 0.25rem 0.25rem 0.5rem;
+    vertical-align: middle;
+    color: var(--text-secondary);
+}
+
+
+
+
+
+/* Headings */
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
@@ -269,6 +324,7 @@ blockquote {
 
 blockquote::before {
     content: '> ';
+    content: '> ' / '';
     position: absolute;
     left: -1.25rem;
     padding-left: 1.25rem;
@@ -617,4 +673,103 @@ th {
 hr {
     width: 70%;
     color: var(--text-secondary);
+}
+
+
+
+
+/* Post list styling */
+
+.post-list {
+    margin-top: 2rem;
+}
+.post-entry {
+    margin: 1rem 0.5rem;
+    padding: 1rem 1rem 0.25rem 1rem;
+    background-color: var(--background-hover);
+    border-radius: var(--border-radius-large);
+}
+
+.post-entry-title {
+    padding-bottom: 0.3rem;
+    line-height: 1.75rem;
+    margin-bottom: 0;
+    color: var(--text-link);
+}
+
+.post-entry-metadata {
+    font-size: 0.7rem;
+    padding-top: 0.3rem;
+    line-height: 1rem;
+    margin-top: 0;
+    padding-left: 0;
+    vertical-align: middle;
+}
+
+.post-entry-metadata>div {
+    display: inline;
+}
+
+.newline-hack {
+    display: block !important;
+}
+
+@media (max-width: 500px) {
+    .post-entry-metadata>div {
+        display: block;
+    }
+
+    .post-entry .featured-image {
+        float: none !important;
+        max-width: 100% !important;
+    }
+}
+
+.post-entry .featured-image {
+    max-width: 40%;
+    float: left;
+    margin: 1rem 0.5rem 0.5rem 0;
+    padding: 0;
+}
+
+.post-entry .post-entry-title {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.post-excerpt {
+    font-size: 1rem;
+    padding: 1rem 0.5rem;
+}
+
+
+
+
+hr {
+    width: 70%;
+    color: var(--text-secondary);
+}
+
+
+.continue-reading {
+    padding-top: 3rem;
+}
+
+.continue-reading-label {
+    padding-top: 1rem;
+}
+
+.previous-post, .next-post {
+    max-width: 50%;
+}
+
+.previous-post {
+    float: left;
+    padding: 0 1.5rem 0 0;
+}
+
+.next-post {
+    float: right;
+    text-align: right;
+    padding: 0 0 0 1.5rem;
 }
