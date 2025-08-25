@@ -1,6 +1,6 @@
 ---
 title: Moving My Blog to 11ty - Part 3 (Building Layouts)
-date: 2025-03-22 11:46:00
+date: 2025-03-22 11:46:00 -5
 tags: [blog, 11ty, static website, github, web development]
 category: Web Development
 excerpt: In part 2 we set up the folder structure in my blog project and configured the `eleventy.config.js` file so that we can pass CSS and other files through the parser for use by the templates. Now we get to move on to the concept of layouts.

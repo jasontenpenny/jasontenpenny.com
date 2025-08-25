@@ -1,6 +1,6 @@
 ---
 title: Moving My Blog to 11ty - Prologue
-date: 2025-03-03 18:19:00
+date: 2025-03-03 18:19:00 -6
 tags: [blog, 11ty, static website, github, web development]
 category: Web Development
 featured-image:

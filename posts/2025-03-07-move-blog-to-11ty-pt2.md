@@ -1,6 +1,6 @@
 ---
 title: Moving My Blog to 11ty - Part 2 (Structure and basic config)
-date: 2025-03-07 19:40:00
+date: 2025-03-07 19:40:00 -6
 tags: [blog, 11ty, static website, github, web development]
 category: Web Development
 excerpt: In part 1 of this series, we got to the point of having basically an empty shell of a website. It's accessible via a URL on the public internet, and we can also run it locally on our machine, but there's not really anything in it. So the first thing we want to do is set up the file structure that will power the site.
