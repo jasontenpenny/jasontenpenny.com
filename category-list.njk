@@ -1,0 +1,23 @@
+---
+layout: default.html
+permalink: /blog/categories/index.html
+title: Categories
+---
+
+{% include 'header.html' %}
+
+<div class="page-wrapper">
+<section class="post-list">
+
+<h1>Categories</h1>
+
+<ul>
+{% for category in collections.categories | sort %}
+  <li><a href="/blog/{{ category | slugify }}">{{ category }}</a></li>
+{% endfor %}
+</ul>
+
+</section>
+</div>
+
+{% include 'footer.html' %}
