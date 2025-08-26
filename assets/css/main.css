@@ -20,7 +20,7 @@
     :root {
         --text-primary: rgb(20, 20, 20);
         --text-secondary: rgb(128, 128, 128);
-        --text-link: rgb(77, 126, 232);
+        --text-link: #146de0;
         --text-strong: rgb(10, 10, 10);
         --text-quote: rgb(134, 199, 116);
         --text-prompt: rgb(216, 212, 212);
@@ -45,12 +45,12 @@
     :root {
         --text-primary: rgb(225, 223, 223);
         --text-secondary: rgb(128, 128, 128);
-        --text-link: rgb(77, 126, 232);
+        --text-link: #7296e6;
         --text-strong: rgb(240, 240, 240);
         --text-quote: rgb(187, 236, 173);
         --text-prompt: rgba(216, 212, 212, 0.75);
-        --background-primary: rgb(20, 20, 20);
-        --background-hover: rgba(50, 50, 50, 0.25);
+        --background-primary: #000000;
+        --background-hover: rgba(50, 50, 50, 0.4);
         --generic-icon-color: rgb(255, 255, 255);
         --code-language-background-color: rgba(255, 255, 255, 0.6);
         --code-background-color: rgba(255, 255, 255, 0.10);
