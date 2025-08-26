@@ -6,7 +6,7 @@ metadata:
     title: "Jason Tenpenny's Blog"
     description: "A blog where I write about technology and other things that happen to interest me"
     language: "en"
-    base: "https://jasontenpenny.com/blog/"
+    base: "{{ site.url }}/blog/"
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language or page.lang }}">
@@ -16,8 +16,8 @@ metadata:
     <link href="{{ metadata.base }}" rel="alternate" />
     <updated>{{ collections.posts | getNewestCollectionItemDate | isoDate }}</updated>
     <id>{{ metadata.base }}</id>
-    <icon>../assets/favicon/favicon.ico</icon>
-    <logo>../assets/favicon/favicon-96x96.png</logo>
+    <icon>{{ site.url }}/assets/favicon/favicon.ico</icon>
+    <logo>{{ site.url }}/assets/favicon/favicon-96x96.png</logo>
     <rights>© {% year %} {{ site.authorName }}</rights>
     <author>
         <name>{{ site.authorName }}</name>
