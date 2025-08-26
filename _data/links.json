@@ -20,7 +20,8 @@
   "label": "mastodon",
   "icon-class": "fa-brands fa-mastodon",
   "color": "#6364ff",
-  "url": "https://mastodon.social/@jasontenpenny"
+  "url": "https://mastodon.social/@jasontenpenny",
+  "hidden": true
 },
 {
   "label": "links",
@@ -31,5 +32,23 @@
   "label": "email",
   "icon-class": "fa-solid fa-envelope",
   "url": "hello@jasontenpenny.com"
+},
+{
+  "label": "mastodon",
+  "icon-class": "fa-brands fa-mastodon",
+  "url": "https://bsky.brid.gy/ap/did:plc:so3xt2f546bwafa3qhjzr3ph",
+  "hidden": true
+},
+{
+  "label": "mastodon",
+  "icon-class": "fa-brands fa-mastodon",
+  "url": "https://bsky.brid.gy/ap/jasontenpenny.com",
+  "hidden": true
+},
+{
+  "label": "mastodon",
+  "icon-class": "fa-brands fa-mastodon",
+  "url": "https://mastodon.social/@itsjason",
+  "hidden": true
 }
 ]

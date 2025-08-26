@@ -15,7 +15,7 @@ layout: default.html
         <p>{{ site.about }}</p>
                 <section class="social-links">
             {%- for link in links -%}
-                <div class="social-link link-{{ link.label }}">
+                <div class="social-link link-{{ link.label }}" {%- if link.hidden -%}style="display: none;"{%- endif -%}>
                     {%- if link.label == "email" -%}
                     {% assign address = link.url | split: '@' %}
                     <a href="javascript:location.href = 'mailto:' + ['{{ address[0] }}','{{ address[1] }}'].join('@')">
