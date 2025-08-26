@@ -169,6 +169,17 @@ menu menu li {
     padding: 0.5rem 1rem;
 }
 
+li:has(menu)::after {
+    content: ' \f105';
+    color: var(--text-secondary);
+    font-size: small;
+    font-family: var(--icon-font)
+}
+
+li:has(menu):hover::after {
+    content: ' \f107';
+}
+
 
 
 

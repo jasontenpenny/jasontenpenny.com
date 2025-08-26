@@ -1,0 +1,24 @@
+[
+    {
+        "label": "Home",
+        "url": "/"
+    },
+    {
+        "label": "About Me",
+        "url": "/about/"
+    },
+    {
+        "label": "Blog",
+        "url": "/blog/",
+        "submenu": [
+            {
+                "label": "Categories",
+                "url": "/blog/categories/"
+            },
+            {
+                "label": "Tags",
+                "url": "/blog/tags/"
+            }
+        ]
+    }
+]
