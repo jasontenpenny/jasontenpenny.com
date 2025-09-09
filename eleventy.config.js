@@ -1,12 +1,20 @@
 import { InputPathToUrlTransformPlugin, IdAttributePlugin } from "@11ty/eleventy";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import feedPlugin from "@11ty/eleventy-plugin-rss";
+import dirOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 import markdownItTaskCheckbox from "markdown-it-task-checkbox";
 import markdownItAttrs from "markdown-it-attrs";
-import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import markdownItFootnote from "markdown-it-footnote";
 import { DateTime } from "luxon";
-import feedPlugin from "@11ty/eleventy-plugin-rss";
 
 export default function(eleventyConfig) {
+
+    // hides default output and enables output plugin for organization by folder
+    eleventyConfig.setQuietMode(true);
+    eleventyConfig.addPlugin(dirOutputPlugin, {
+        // adds yellow highlight if file size exceeds this many bytes
+        warningFileSize: 400 * 1000,
+    });
 
     // sets the default layout
     eleventyConfig.addGlobalData('layout', 'post.html');
