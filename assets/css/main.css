@@ -8,7 +8,7 @@
     --border-radius-small: 0.3125rem;
     --code-border-radius: 0.5rem;
     font-family: Inter, sans-serif;
-    --icon-font: "Font Awesome 7 Free", FontAwesome;
+    --icon-font: "Font Awesome 7 Free", "Font Awesome 7 Brands";
     font-feature-settings: 'liga' 1, 'ss02' 1;  /* fix for Chrome */
 }
 
