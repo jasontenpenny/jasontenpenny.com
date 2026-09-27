@@ -173,7 +173,8 @@ li:has(menu)::after {
     content: ' \f105';
     color: var(--text-secondary);
     font-size: small;
-    font-family: var(--icon-font)
+    font-weight: 900;
+    font-family: var(--icon-font) !important;
 }
 
 li:has(menu):hover::after {
@@ -615,6 +616,7 @@ th {
     margin-top: 0;
     position: absolute;
     font-family: var(--icon-font) !important;
+    font-weight: 900;
     -webkit-font-smoothing: antialiased;
     text-align: center;
     line-height: 1rem;
