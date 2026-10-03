@@ -1,6 +1,6 @@
 import { InputPathToUrlTransformPlugin, IdAttributePlugin } from "@11ty/eleventy";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
-import feedPlugin from "@11ty/eleventy-plugin-rss";
+import rssPlugin from "@11ty/eleventy-plugin-rss";
 import dirOutputPlugin from "@11ty/eleventy-plugin-directory-output";
 import markdownItTaskCheckbox from "markdown-it-task-checkbox";
 import markdownItAttrs from "markdown-it-attrs";
@@ -34,7 +34,7 @@ export default function(eleventyConfig) {
     eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
 
     // enables RSS creation
-    eleventyConfig.addPlugin(feedPlugin);
+    eleventyConfig.addPlugin(rssPlugin);
 
     // enables IdAttributePlugin to hyperlink headings
     eleventyConfig.addPlugin(IdAttributePlugin);
