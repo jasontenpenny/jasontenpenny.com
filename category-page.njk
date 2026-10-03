@@ -23,7 +23,7 @@ eleventyExcludeFromCollections: true
                 <h2 class="post-entry-title">{{ item.data.title }}</h2>
             </a>
             <div class="post-entry-metadata">
-            <div><i class="fa-solid fa-clock icon-post-date"></i><span class="post-date" title="{{ post.date | hoverDate }}">{{ item.date | postDate }}</span>
+            <div><i class="fa-solid fa-clock icon-post-date"></i><span class="post-date" title="{{ item.date | hoverDate }}">{{ item.date | postDate }}</span>
                 <i class="fa-solid fa-user icon-post-author"></i><span class="post-author"><a href="{{ site.authorBlueskyUrl }}">{{ site.authorName }}</a></span></div>
             <div><i class="fa-solid fa-folder-open icon-post-category"></i><span class="post-categories">
                 {%- if item.data.category -%}
