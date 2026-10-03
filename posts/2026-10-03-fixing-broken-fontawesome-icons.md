@@ -4,6 +4,7 @@ date: 2026-10-03 14:20:00 -5
 category: Web Development
 tags: [web development, static website, 11ty, FontAwesome]
 excerpt: I recently had an issue with some of the FontAwesome icons not displaying properly on my site, and this is a write-up of how I fixed it.
+standardSiteDocument: true
 ---
 
 I wanted to write up a post on how I fixed an issue with my FontAwesome icons. I recently noticed a problem that had sprung up on my site, where some of the icons from FontAwesome weren't displaying properly. Instead of being the proper icon, they were showing as <i class="fa-solid fa-angle-right" style="font-weight: 400;"></i>. The weird part was that only some of the icons were affected. Specifically the arrows for the Blog menu, and then some other ones that I haven't actually used, but are configured on a hidden page where I test typography settings. But at the same time that those few were not working, other icons, like the ones in the blog post metadata section and the social icons on my homepage, were all displaying just fine!

@@ -6,6 +6,7 @@ import markdownItTaskCheckbox from "markdown-it-task-checkbox";
 import markdownItAttrs from "markdown-it-attrs";
 import markdownItFootnote from "markdown-it-footnote";
 import { DateTime } from "luxon";
+import standardSitePlugin from "eleventy-plugin-standard-site";
 
 export default function(eleventyConfig) {
 
@@ -111,6 +112,24 @@ export default function(eleventyConfig) {
 
     // adds shortcodes
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
+    // configure standard site plugin
+    eleventyConfig.addPlugin(standardSitePlugin, {
+        publicationName: "Jason Tenpenny's Blog",
+        publicationUrl: "https://jasontenpenny.com",
+        identifier: "did:plc:so3xt2f546bwafa3qhjzr3ph",
+        password: "d7xr-n7io-7edh-qz6f",
+        publicationDescription: "A blog where I write about technology and other things that happen to interest me",
+        // Optional: whether to automatically extract text content from posts
+        // and include in their document records, defaults to true
+        includeTextContent: true,
+        // Optional: whether the publication should appear in discovery feeds, defaults to true
+        showInDiscover: true,
+        // Optional: PDS URL, defaults to "https://bsky.social"
+        pds: "https://pds.jasontenpenny.com",
+        // Optional: path to an icon image file to be used in the publication record
+        publicationIconPath: "assets/favicon/web-app-manifest-512x512.png",
+    });
 }
 
 export const config = {
