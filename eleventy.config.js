@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { InputPathToUrlTransformPlugin, IdAttributePlugin } from "@11ty/eleventy";
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import rssPlugin from "@11ty/eleventy-plugin-rss";
@@ -118,7 +119,7 @@ export default function(eleventyConfig) {
         publicationName: "Jason Tenpenny's Blog",
         publicationUrl: "https://jasontenpenny.com",
         identifier: "did:plc:so3xt2f546bwafa3qhjzr3ph",
-        password: "d7xr-n7io-7edh-qz6f",
+        password: (process.env.STANDARD_SITE_PWD),
         publicationDescription: "A blog where I write about technology and other things that happen to interest me",
         // Optional: whether to automatically extract text content from posts
         // and include in their document records, defaults to true

@@ -17,9 +17,10 @@
         "@11ty/eleventy-plugin-directory-output": "^1.0.2",
         "@11ty/eleventy-plugin-rss": "^3.0.1",
         "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+        "dotenv": "^16.6.1",
+        "eleventy-plugin-standard-site": "^1.0.0",
         "markdown-it-attrs": "^4.3.1",
         "markdown-it-footnote": "^4.0.0",
-        "markdown-it-task-checkbox": "^1.0.6",
-        "eleventy-plugin-standard-site": "^1.0.0"
+        "markdown-it-task-checkbox": "^1.0.6"
     }
 }
