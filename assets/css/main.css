@@ -765,12 +765,6 @@ hr {
 
 
 
-hr {
-    width: 70%;
-    color: var(--text-secondary);
-}
-
-
 .continue-reading {
     padding-top: 3rem;
 }
@@ -792,4 +786,13 @@ hr {
     float: right;
     text-align: right;
     padding: 0 0 0 1.5rem;
+}
+
+
+.comments {
+    padding-top: 3rem;
+}
+
+.comments-label {
+    padding-top: 1rem;
 }
