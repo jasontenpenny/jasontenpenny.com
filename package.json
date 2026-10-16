@@ -4,10 +4,7 @@
     "description": "Powers the jasontenpenny.com website",
     "main": "index.js",
     "scripts": {
-        "11ty:build": "npx @11ty/eleventy",
-        "11ty:benchmark": "DEBUG=Eleventy:Benchmark* npm run build",
-        "build": "11ty:build",
-        "wrangler:deploy": "npx wrangler deploy"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
