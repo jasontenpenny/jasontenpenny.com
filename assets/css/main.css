@@ -505,6 +505,15 @@ pre, code {
     border-radius: var(--code-border-radius) !important;
 }
 
+.filepath {
+    color: var(--text-strong) !important;
+    font-weight: bold !important;
+    background: none !important;
+    border: none !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+}
+
 pre:not([class*=language-]), code:not([class*=language-]) {
     font-family: monospace;
     color: var(--code-inline-color);
@@ -530,6 +539,7 @@ pre[class*=language-] {
     padding-inline: 1rem 0 !important;
     background-color: var(--code-background-color) !important;
     margin: 1.5rem 3rem !important;
+    overflow: hidden !important;
 }
 
 pre[class=language-text]::before {
@@ -540,6 +550,7 @@ code[class*=language-] {
     padding-top: 0;
     display: block !important;
     margin: 1rem !important;
+    overflow: auto !important;
 }
 
 pre {
@@ -571,12 +582,6 @@ p.filename + pre {
     border-top-right-radius: 0 !important;
 }
 
-code.filepath {
-    color: var(--text-strong);
-    font-weight: bold;
-    background: none;
-    border: none;
-}
 
 
 /* Table styling */
@@ -765,12 +770,6 @@ hr {
 
 
 
-hr {
-    width: 70%;
-    color: var(--text-secondary);
-}
-
-
 .continue-reading {
     padding-top: 3rem;
 }
@@ -792,4 +791,21 @@ hr {
     float: right;
     text-align: right;
     padding: 0 0 0 1.5rem;
+}
+
+
+.comments {
+    padding-top: 3rem;
+}
+
+.comments-label {
+    padding-top: 1rem;
+}
+
+bsky-comments::part(comments) {
+    background-color: var(--background-color) !important;
+}
+
+bsky-comments::part(comments a) {
+    color: var(--text-link) !important;
 }

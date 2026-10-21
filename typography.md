@@ -130,7 +130,7 @@ fi;
 @import
   "colors/light-typography",
   "colors/dark-typography";
-``` 
+```
 
 ## Mathematics
 
