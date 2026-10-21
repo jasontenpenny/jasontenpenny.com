@@ -1,10 +1,10 @@
 ---
 title: Integrating with Standard.site
-date: 2026-10-17 14:20:00 -5
+date: 2026-10-21 10:20:00 -5
 category: Web Development
 tags: [web development, static website, 11ty, standard.site]
 excerpt: Documenting my process to integrate with Standard.site
-standardSiteDocument: false
+standardSiteDocument: true
 ---
 
 ## Background
@@ -13,11 +13,11 @@ Since the Bluesky project was announced several years ago as all the craziness w
 
 Because Bluesky is built on an open platform (now more formally known as the Atmosphere), there are all kinds of possibilities for other ways to use the infrastructure and network. One of the projects that has developed over time is [Standard.site](https://standard.site). This project builds on the work of other platforms like [Leaflet](https://leaflet.pub). Leaflet is a blogging platform that utilizes your Bluesky (or Atmosphere) Personal Data Server (PDS) to store your blog content. As a result, your blog content is directly linked to your Bluesky profile as your identity, and is hosted wherever you are already storing the rest of your Atmosphere/Bluesky data.
 
-Standard.site expands on this by creating a standardized set of lexicons (think metadata) that are used by the various groups building blogging services on the Atmosphere. But they thought ahead and created a way to integrate standalone sites as well. If we add the necessary lexicons/metadata to any site, we can create the links in the PDS so that existing blogs can be tied back to the PDS and the Bluesky identity.
+Standard.site expands on this by creating a standardized set of lexicons (think metadata) that are used by the various groups building blogging services on the Atmosphere. But they thought ahead and created a way to integrate standalone sites as well. If we add the necessary lexicons/metadata to any site, we can create the links in the PDS so that existing blogs can be tied back to the PDS and the Bluesky identity. It also allows my blog posts to show up in reader apps that are aggregating standard.site posts from many different sources.
 
 ## Integrating with my 11ty Blog
 
-Fortunately, the heavy lifting had already been done by someone else. A Github user, [aitorres](https://github.com/aitorres), had built a [plugin](https://github.com/aitorres/eleventy-plugin-standard-site) for 11ty that performs all the integration components, I just had to implement it. The instructions included in the Github repo are quite good, it didn't leave a ton of guess-work. Essentially what it does is hook into Bluesky to write the necessary standard.site values into your PDS. You authenticate using an App Password from Bluesky.
+Fortunately, the heavy lifting had already been done by someone else. A Github user, [aitorres](https://github.com/aitorres), has built a [plugin](https://github.com/aitorres/eleventy-plugin-standard-site) for 11ty that performs all the integration components, I just had to implement it. The instructions included in the Github repo are quite good, it didn't leave a ton of guess-work. Essentially what it does is hook into Bluesky to write the necessary standard.site values into your PDS. You authenticate using an App Password from Bluesky.
 
 I added a line to my `package.json` file that adds the plugin as a dependency.
 
